@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background: #151617;
+  color: #dadadb;
+  margin-bottom: 40px;
+  overflow-x: hidden;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 25px;
+}
+
+header h1 {
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+header h1 span {
+  font-weight: normal;
+}
+
+header svg {
+  margin-right: 10px;
+}
+
+.site-hr {
+  width: 100vw;
+  border: 1px solid #4c38a6;
+}
+
+.chatrooms-title {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.chatrooms {
+  margin-bottom: 40px;
+  min-width: 50vw;
+  max-width: 90vw;
+  padding: 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #242628;
+  border-radius: 5px;
+}
+
+.chatroom {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #707477;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #dadadb;
+  font-weight: normal;
+  font-family: inherit;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.chatroom:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.chatroom.active {
+  background-color: #4c38a6;
+  color: #c5f73b;
+}
+
+.chat-window {
+  width: 600px;
+  max-width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+
+.chat-window .chatrooms-title {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.chat-list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chat-list .chat {
+  background-color: #242628;
+  width: 100%;
+  margin: 20px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 46px 1fr;
+      grid-template-columns: 46px 1fr;
+  -ms-grid-rows: max-content max-content;
+      grid-template-rows: -webkit-max-content -webkit-max-content;
+      grid-template-rows: max-content max-content;
+  gap: 0px 15px;
+  padding: 20px;
+  border-radius: 5px;
+      grid-template-areas: 'img header' 'img message';
+}
+
+.chat-list .chat img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: img;
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+}
+
+.chat-list .chat .chat-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chat-list .chat .chat-header p {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.chat-list .chat .chat-header span {
+  color: #696c74;
+  font-size: 14px;
+}
+
+.chat-list .chat .chat-message {
+  margin: 0;
+  margin-top: 10px;
+  width: 100%;
+  word-wrap: break-word;
+  display: block;
+  line-height: 1.5;
+}
+
+.chat-forms {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
+}
+
+.user-message {
+  width: 100%;
+}
+
+.user-appearence {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 46px 1fr;
+      grid-template-columns: 46px 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.user-appearence img {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+}
+
+.form-input {
+  position: relative;
+  width: 100%;
+}
+
+.form-input button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.form-input input {
+  width: 100%;
+  outline: none;
+  border: 2px solid #242628;
+  font-size: 18px;
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 60px;
+  color: #dadadb;
+  font-family: inherit;
+}
+
+.form-input input:focus {
+  border-color: #4c38a6;
+}
+
+.form-input button {
+  outline: none;
+  border: none;
+  background-color: #242628;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.form-input button:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+/*# sourceMappingURL=style.css.map */
