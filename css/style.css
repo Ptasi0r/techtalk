@@ -19,7 +19,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   background: #151617;
   color: #dadadb;
@@ -169,14 +168,20 @@ header svg {
       grid-template-areas: 'img header' 'img message';
 }
 
-.chat-list .chat img {
+.chat-list .chat .img-container {
+  border-radius: 50%;
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: img;
+  overflow: hidden;
   height: 46px;
   width: 46px;
-  border-radius: 50%;
+}
+
+.chat-list .chat .img-container img {
+  height: 46px;
+  width: 46px;
 }
 
 .chat-list .chat .chat-header {

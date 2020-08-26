@@ -14,7 +14,6 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   background: #151617;
   color: $text-color;
@@ -116,11 +115,17 @@ header {
     padding: 20px;
     border-radius: 5px;
     grid-template-areas: 'img header' 'img message';
-    img {
+
+    .img-container {
+      border-radius: 50%;
       grid-area: img;
+      overflow: hidden;
       height: 46px;
       width: 46px;
-      border-radius: 50%;
+      img {
+        height: 46px;
+        width: 46px;
+      }
     }
 
     .chat-header {

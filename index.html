@@ -32,23 +32,9 @@
       <p class="chatrooms-title">LET'S TALK!</p>
       <section class="chat-list">
         <div class="chat">
-          <img src="img/avatars/javascript.png" alt="User avatar" class="avatar" />
-          <div class="chat-header">
-            <p>MarioDev</p>
-            <span>less than a minute ago</span>
-          </div>
-          <div class="chat-message">This new feature is AWESOME! I need to try it!</div>
-        </div>
-        <div class="chat">
-          <img src="img/avatars/javascript.png" alt="User avatar" class="avatar" />
-          <div class="chat-header">
-            <p>MarioDev</p>
-            <span>less than a minute ago</span>
-          </div>
-          <div class="chat-message">This new feature is AWESOME! I need to try it!</div>
-        </div>
-        <div class="chat">
-          <img src="img/avatars/javascript.png" alt="User avatar" class="avatar" />
+          <span class="img-container">
+            <img src="img/avatars/javascript.png" alt="User avatar" class="avatar" />
+          </span>
           <div class="chat-header">
             <p>MarioDev</p>
             <span>less than a minute ago</span>
@@ -58,7 +44,9 @@
       </section>
       <section class="chat-forms">
         <form class="user-appearence">
-          <img src="img/avatars/javascript.png" alt="User avatar" class="avatar" />
+          <span class="img-container">
+            <img src="img/avatars/javascript.png" alt="User avatar" class="avatar" />
+          </span>
           <div class="form-input">
             <div class="form-input">
               <input type="text" class="username" placeholder="Enter Your name..." />
@@ -90,7 +78,24 @@
         </form>
       </section>
     </section>
-
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyCGg4YjOqzylJ6wQCB5xz01jncZ2fsMckA',
+        authDomain: 'techtalk-mp.firebaseapp.com',
+        databaseURL: 'https://techtalk-mp.firebaseio.com',
+        projectId: 'techtalk-mp',
+        storageBucket: 'techtalk-mp.appspot.com',
+        messagingSenderId: '361313841716',
+        appId: '1:361313841716:web:18482f37b5219bfe9f1061',
+        measurementId: 'G-F7EYW1GP1G',
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
     <script src="js/chat.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/app.js"></script>
