@@ -24,32 +24,30 @@
     <section class="chatrooms">
       <button class="chatroom" id="general">#general</button>
       <button class="chatroom" id="javascript">#javascript</button>
-      <button class="chatroom" id="reackjs">#reactjs</button>
+      <button class="chatroom" id="reactjs">#reactjs</button>
       <button class="chatroom" id="python">#python</button>
     </section>
     <hr class="site-hr" />
     <section class="chat-window">
       <p class="chatrooms-title">LET'S TALK!</p>
-      <section class="chat-list">
-        <div class="chat">
-          <span class="img-container">
-            <img src="img/avatars/javascript.png" alt="User avatar" class="avatar" />
-          </span>
-          <div class="chat-header">
-            <p>MarioDev</p>
-            <span>less than a minute ago</span>
-          </div>
-          <div class="chat-message">This new feature is AWESOME! I need to try it!</div>
-        </div>
-      </section>
+      <span class="loader"><img src="img/loader.gif" /></span>
+      <section class="chat-list"></section>
       <section class="chat-forms">
         <form class="user-appearence">
           <span class="img-container">
-            <img src="img/avatars/javascript.png" alt="User avatar" class="avatar" />
+            <img src="" alt="User avatar" class="avatar" />
+            <span class="change-picture">
+              <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M25.746 5.72305L24.1487 6.92891C21.9709 4.24102 18.5838 2.51562 14.7804 2.51562C8.2129 2.51562 2.89718 7.64258 2.88868 13.9863C2.88019 20.3355 8.20724 25.4844 14.7804 25.4844C19.9149 25.4844 24.2903 22.3398 25.9556 17.9348C25.9981 17.8199 25.9358 17.6914 25.8168 17.6531L24.211 17.1199C24.1551 17.1014 24.0938 17.1048 24.0403 17.1293C23.9869 17.1538 23.9455 17.1976 23.925 17.2512C23.874 17.3879 23.8174 17.5246 23.7579 17.6586C23.268 18.7797 22.5656 19.7859 21.6707 20.65C20.783 21.5087 19.732 22.1939 18.5753 22.668C17.3774 23.1574 16.1001 23.4062 14.786 23.4062C13.4692 23.4062 12.1947 23.1574 10.9968 22.668C9.83898 22.1959 8.78758 21.5105 7.90138 20.65C7.01127 19.793 6.30236 18.777 5.81417 17.6586C5.30724 16.4992 5.04952 15.2687 5.04952 13.9973C5.04952 12.7258 5.30724 11.4953 5.81417 10.3359C6.30411 9.21484 7.00646 8.20859 7.90138 7.34453C8.7963 6.48047 9.83849 5.80234 10.9968 5.32656C12.1947 4.83711 13.472 4.58828 14.786 4.58828C16.1029 4.58828 17.3774 4.83711 18.5753 5.32656C19.7331 5.79864 20.7845 6.48407 21.6707 7.34453C21.9511 7.61523 22.2145 7.90234 22.458 8.20312L20.7531 9.48828C20.7194 9.51348 20.6937 9.54735 20.679 9.58601C20.6644 9.62468 20.6613 9.66655 20.6702 9.70683C20.679 9.7471 20.6995 9.78414 20.7292 9.81368C20.7589 9.84323 20.7967 9.86407 20.8381 9.87383L25.8111 11.0496C25.9527 11.0824 26.0915 10.9785 26.0915 10.8391L26.1142 5.89258C26.1113 5.71211 25.8933 5.61094 25.746 5.72305V5.72305Z"
+                  fill="#C5F73B"
+                />
+              </svg>
+            </span>
           </span>
           <div class="form-input">
             <div class="form-input">
-              <input type="text" class="username" placeholder="Enter Your name..." />
+              <input type="text" id="username" placeholder="Enter Your name..." />
               <button>
                 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -65,7 +63,7 @@
         </form>
         <form class="user-message">
           <div class="form-input">
-            <input type="text" class="message" placeholder="Write a message..." />
+            <input type="text" id="message" placeholder="Write a message..." />
             <button>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -78,12 +76,12 @@
         </form>
       </section>
     </section>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <div class="update-msg"></div>
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
     <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
+      const firebaseConfig = {
         apiKey: 'AIzaSyCGg4YjOqzylJ6wQCB5xz01jncZ2fsMckA',
         authDomain: 'techtalk-mp.firebaseapp.com',
         databaseURL: 'https://techtalk-mp.firebaseio.com',
